@@ -1,0 +1,23 @@
+{
+  "name": "floespineira.com",
+  "version": "1.0.0",
+  "description": "Static site for floespineira.com (migrated from WordPress, built with Eleventy)",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "migrate": "node scripts/migrate-wordpress.mjs",
+    "sync:youtube": "node scripts/sync-youtube.mjs",
+    "sync:instagram": "node scripts/sync-instagram.mjs",
+    "sync:feeds": "npm run sync:youtube && npm run sync:instagram"
+  },
+  "keywords": [],
+  "author": "pedrofuentes <git@pedrofuent.es>",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "gray-matter": "^4.0.3",
+    "turndown": "^7.2.4"
+  }
+}
