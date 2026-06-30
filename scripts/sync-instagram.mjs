@@ -1,4 +1,4 @@
-import { writeFile, mkdir } from "fs/promises";
+import { writeFile, readFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { createWriteStream } from "fs";
 import { pipeline } from "stream/promises";
@@ -103,7 +103,15 @@ async function main() {
     )
   ).filter(Boolean);
 
-  // Step 3: Write JSON
+  // Step 3: Write JSON. Never clobber a non-empty snapshot with an empty
+  // result (a transient/odd 200 response should not wipe the feed).
+  if (posts.length === 0) {
+    const existing = JSON.parse(await readFile(DATA_FILE, "utf8").catch(() => "[]"));
+    if (existing.length > 0) {
+      console.warn("API returned 0 posts but snapshot is non-empty — keeping existing snapshot.");
+      process.exit(0);
+    }
+  }
   await writeFile(DATA_FILE, JSON.stringify(posts, null, 2) + "\n", "utf8");
   console.log(`Wrote ${posts.length} posts to src/_data/instagram.json`);
 }

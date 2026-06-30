@@ -89,7 +89,16 @@ async function main() {
     })
   );
 
-  // Step 4: Write JSON
+  // Step 4: Write JSON. Never clobber a non-empty snapshot with an empty
+  // result: the Playlist Items API omits `items` entirely when there are 0
+  // results, and a transient/odd 200 response should not wipe the feed.
+  if (videos.length === 0) {
+    const existing = JSON.parse(await readFile(DATA_FILE, "utf8").catch(() => "[]"));
+    if (existing.length > 0) {
+      console.warn("API returned 0 videos but snapshot is non-empty — keeping existing snapshot.");
+      process.exit(0);
+    }
+  }
   await writeFile(DATA_FILE, JSON.stringify(videos, null, 2) + "\n", "utf8");
   console.log(`Wrote ${videos.length} videos to src/_data/youtube.json`);
 }
