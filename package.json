@@ -6,8 +6,8 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "migrate": "node scripts/migrate-wordpress.mjs",
-    "sync:youtube": "node scripts/sync-youtube.mjs",
-    "sync:instagram": "node scripts/sync-instagram.mjs",
+    "sync:youtube": "node --env-file-if-exists=.env scripts/sync-youtube.mjs",
+    "sync:instagram": "node --env-file-if-exists=.env scripts/sync-instagram.mjs",
     "sync:feeds": "npm run sync:youtube && npm run sync:instagram"
   },
   "keywords": [],

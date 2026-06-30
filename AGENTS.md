@@ -67,20 +67,44 @@ Edit `src/_data/site.json` (e.g. `tagline`, `home.heroHeadline`, `socials`, `nav
 
 Feeds render as **static snapshots** from `src/_data/youtube.json` and `src/_data/instagram.json`.
 They are refreshed automatically every Monday by `.github/workflows/refresh-feeds.yml`, and can be
-run on demand: `gh workflow run refresh-feeds.yml`. Locally: `npm run sync:feeds` (needs env vars).
+run on demand: `gh workflow run refresh-feeds.yml`. Locally: copy `.env.example` to `.env`,
+fill in the keys, then `npm run sync:feeds` (the scripts auto-load `.env`).
 
 The homepage **hides** the Latest Videos / Latest Photos sections while their data arrays are empty,
 and shows them automatically once the snapshots are populated.
 
+## Secrets & security
+
+Three kinds of credentials, three different homes — **never commit a real secret**:
+
+| Credential | Secret? | Where it goes |
+|-----------|---------|---------------|
+| **Web3Forms access key** | No — public by design (it ships in the HTML form) | `src/_data/site.json` (`web3formsKey`), committed |
+| **`YOUTUBE_API_KEY`** | Yes | GitHub Actions **secret** (CI) + local `.env` (gitignored) |
+| **`IG_ACCESS_TOKEN`** | Yes | GitHub Actions **secret** (CI) + local `.env` (gitignored) |
+
+- **CI (the weekly job):** store as encrypted repository secrets — they're only exposed to the
+  workflow at run time and never appear in logs or the repo. Set them with the GitHub CLI (the value
+  is read from a prompt/stdin, so it isn't echoed or saved in shell history):
+  ```bash
+  gh secret set YOUTUBE_API_KEY      # paste the key when prompted
+  gh secret set IG_ACCESS_TOKEN      # paste the token when prompted
+  ```
+  Or via the web UI: **Settings → Secrets and variables → Actions → New repository secret**.
+- **Local runs:** `cp .env.example .env` and fill it in. `.env` is gitignored and auto-loaded by
+  `npm run sync:youtube` / `sync:instagram`. Don't paste secrets into chat or commits.
+- **Tighten the YouTube key** in Google Cloud (restrict it to the *YouTube Data API v3* and, ideally,
+  to an IP/referrer) so a leak has minimal blast radius.
+
 ## ⚠️ One-time setup still required (provide these, then re-run the relevant step)
 
 1. **Web3Forms key (contact form).** Get a free access key at https://web3forms.com and replace
-   `web3formsKey` in `src/_data/site.json` (it is public-by-design — safe to commit).
-2. **YouTube Data API key.** Create one in Google Cloud (YouTube Data API v3), then:
-   `gh secret set YOUTUBE_API_KEY`.
+   `web3formsKey` in `src/_data/site.json` (public-by-design — safe to commit).
+2. **YouTube Data API key.** Create one in Google Cloud (YouTube Data API v3), then store it as the
+   `YOUTUBE_API_KEY` secret (see *Secrets & security* above).
 3. **Instagram Graph API token.** Connect the IG account to a Facebook Page + Meta app, generate a
-   **long-lived** token, then `gh secret set IG_ACCESS_TOKEN`. The weekly job refreshes the token; if
-   it ever fully expires, regenerate and reset the secret.
+   **long-lived** token, then store it as the `IG_ACCESS_TOKEN` secret. The weekly job refreshes the
+   token; if it ever fully expires, regenerate and reset the secret.
 4. **DNS cutover (final step — retires WordPress).** The repo ships a `CNAME` (`floespineira.com`)
    so Pages serves the apex domain. When ready to go live:
    - Point DNS for `floespineira.com` at GitHub Pages: apex `A` records `185.199.108.153`,
