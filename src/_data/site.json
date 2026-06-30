@@ -1,0 +1,41 @@
+{
+  "title": "Flo Espiñeira",
+  "tagline": "Non-Binary Queer Pro Enduro Rider",
+  "description": "Pro Enduro Rider, NB Queer Community, From The Andes to the World",
+  "url": "https://floespineira.com",
+  "lang": "en",
+  "ga": "G-4TJV71YL21",
+  "colors": {
+    "primary": "#0f9e5e",
+    "primaryAlt": "#00d084",
+    "dark": "#313131",
+    "darkAlt": "#32373c",
+    "light": "#ffffff"
+  },
+  "fonts": {
+    "heading": "Yanone Kaffeesatz",
+    "body": "Fira Mono"
+  },
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "News", "url": "/news/" },
+    { "label": "Contact", "url": "/contact/" }
+  ],
+  "socials": {
+    "instagram": "https://www.instagram.com/floespineira/",
+    "tiktok": "https://www.tiktok.com/@floespineira",
+    "youtube": "https://www.youtube.com/channel/UCETC6T-Xue8UrdlxdXGLACw"
+  },
+  "youtubeChannelId": "UCETC6T-Xue8UrdlxdXGLACw",
+  "home": {
+    "heroHeadline": "Non-Binary Queer Pro Enduro Rider",
+    "sections": {
+      "videos": "Latest Videos",
+      "photos": "Latest Photos",
+      "bikeCheck": "Bike Check",
+      "sponsors": "Sponsors",
+      "cta": "BIKES. QUEER. COMMUNITY."
+    }
+  },
+  "web3formsKey": "REPLACE_WITH_WEB3FORMS_ACCESS_KEY"
+}
