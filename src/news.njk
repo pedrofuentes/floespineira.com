@@ -1,0 +1,36 @@
+---
+layout: base.njk
+title: News — Flo Espiñeira
+permalink: /news/
+---
+
+<div class="container news-page">
+  <h1>News</h1>
+
+  {% if collections.posts and collections.posts.length %}
+    <ul class="post-list">
+      {% for post in collections.posts %}
+        <li class="post-card">
+          {% if post.data.hero %}
+            <div class="post-card-thumb">
+              <img src="{{ post.data.hero }}" alt="{{ post.data.title }}" loading="lazy" />
+            </div>
+          {% endif %}
+          <div class="post-card-body">
+            <time class="post-card-date" datetime="{{ post.date | htmlDateString }}">
+              {{ post.date | readableDate }}
+            </time>
+            <h2 class="post-card-title">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h2>
+            {% if post.data.excerpt %}
+              <p class="post-card-excerpt">{{ post.data.excerpt }}</p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="news-empty">No posts yet — check back soon.</p>
+  {% endif %}
+</div>
