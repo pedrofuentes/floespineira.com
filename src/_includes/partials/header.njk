@@ -1,0 +1,29 @@
+<header id="masthead" role="banner">
+  <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+  <div class="header-inner container">
+
+    <div class="site-branding">
+      <p class="site-title">
+        <a href="/" rel="home">{{ site.title }}</a>
+      </p>
+    </div>
+
+    <label class="hamburger-label" for="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+    </label>
+
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <ul id="primary-menu" role="menubar">
+        {% for item in site.nav %}
+          <li class="menu-item{% if page.url == item.url %} current-menu-item{% endif %}" role="none">
+            <a href="{{ item.url }}" role="menuitem"
+              {% if page.url == item.url %}aria-current="page"{% endif %}>
+              {{ item.label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+  </div>
+</header>
