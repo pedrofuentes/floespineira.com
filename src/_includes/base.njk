@@ -1,11 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.lang or 'en' }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title or "Flo Espiñeira" }}</title>
+    <title>{{ title or site.title }}</title>
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/assets/fonts/yanone-kaffeesatz-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/yanone-kaffeesatz-latin-ext-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/fira-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/assets/css/site.css" />
   </head>
   <body>
-    {{ content | safe }}
+    {% include "partials/header.njk" %}
+    <main id="content" tabindex="-1">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
   </body>
 </html>
