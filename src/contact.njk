@@ -1,0 +1,96 @@
+---
+layout: base.njk
+title: Contact
+description: Get in touch with Flo Espiñeira — media inquiries, sponsorship, and more.
+permalink: /contact/
+---
+
+<div class="container contact-page">
+  <h1>Contact</h1>
+  <p class="contact-intro">
+    Hi, I am Flo Espiñeira. For media inquiries, sponsorship or any other topic
+    please use the form to contact me, I&rsquo;ll get back to you as soon as I can.
+  </p>
+
+  <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
+    <input type="hidden" name="subject" value="New message from floespineira.com" />
+    <input type="hidden" name="from_name" value="floespineira.com" />
+    <!-- Honeypot spam filter -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+    <div class="form-row">
+      <label for="name">Name <span aria-hidden="true">*</span></label>
+      <input type="text" id="name" name="name" required autocomplete="name" />
+    </div>
+    <div class="form-row">
+      <label for="email">Email <span aria-hidden="true">*</span></label>
+      <input type="email" id="email" name="email" required autocomplete="email" spellcheck="false" />
+    </div>
+    <div class="form-row">
+      <label for="message">Comment or Message <span aria-hidden="true">*</span></label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="btn contact-submit">Submit</button>
+    <p id="form-result" class="form-result" role="status" aria-live="polite" hidden></p>
+  </form>
+</div>
+
+<style>
+  .contact-page { max-width: 680px; padding-top: 2.5rem; padding-bottom: 3.5rem; }
+  .contact-intro { margin-bottom: 2rem; }
+  .contact-form .form-row { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
+  .contact-form label { margin-bottom: 0.4rem; font-weight: 600; }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    border: 2px solid var(--color-dark, #313131);
+    background: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { outline: 3px solid var(--color-primary, #0f9e5e); outline-offset: 1px; }
+  .contact-form span { color: var(--color-primary, #0f9e5e); }
+  .form-result { margin-top: 1rem; font-weight: 600; }
+  .form-result.is-error { color: #c0392b; }
+  .form-result.is-success { color: var(--color-primary, #0f9e5e); }
+</style>
+
+<script>
+  (function () {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+    var result = document.getElementById("form-result");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      var prev = btn.textContent;
+      btn.textContent = "Sending\u2026";
+      result.hidden = true;
+      result.className = "form-result";
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            result.textContent = "Thanks! Your message has been sent.";
+            result.classList.add("is-success");
+          } else {
+            result.textContent = (res.d && res.d.message) || "Something went wrong. Please try again.";
+            result.classList.add("is-error");
+          }
+          result.hidden = false;
+        })
+        .catch(function () {
+          result.textContent = "Network error. Please try again later.";
+          result.classList.add("is-error");
+          result.hidden = false;
+        })
+        .finally(function () { btn.disabled = false; btn.textContent = prev; });
+    });
+  })();
+</script>

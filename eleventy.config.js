@@ -1,6 +1,11 @@
+import { dateToRfc822, getNewestCollectionItemDate } from "@11ty/eleventy-plugin-rss";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+
+  eleventyConfig.addFilter("dateToRfc822", dateToRfc822);
+  eleventyConfig.addFilter("getNewestCollectionItemDate", getNewestCollectionItemDate);
 
   eleventyConfig.addCollection("posts", (c) =>
     c.getFilteredByGlob("src/news/*.md").sort((a, b) => b.date - a.date)
