@@ -539,3 +539,437 @@ button[type="submit"]:hover, button[type="submit"]:focus {
   white-space: nowrap;
   border: 0;
 }
+
+/* ============================================================
+   Homepage — Hero
+   ============================================================ */
+
+.home-hero {
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.home-hero .container {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+.home-hero-inner {
+  max-width: 780px;
+}
+
+.home-hero-name {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  color: #fff;
+  margin-bottom: 0.3em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.home-hero-pronouns {
+  font-size: 0.45em;
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+.home-hero-tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 1.5rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.home-hero-socials {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.home-hero-socials a {
+  color: #fff;
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+  display: inline-flex;
+}
+
+.home-hero-socials a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.home-hero-socials svg {
+  fill: currentColor;
+}
+
+/* ============================================================
+   Homepage — Achievements / Titles band
+   ============================================================ */
+
+.home-titles {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.home-titles-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .home-titles-inner {
+    grid-template-columns: 1fr;
+  }
+  .home-titles-photo { order: -1; }
+}
+
+.home-titles-photo img {
+  border-radius: 2px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.home-titles-text p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.home-titles-text a {
+  color: var(--color-primary-alt);
+  text-decoration: none;
+}
+.home-titles-text a:hover { text-decoration: underline; }
+
+.home-titles-heading {
+  color: #fff;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  margin-bottom: 0.6em;
+}
+
+.home-titles-heading a {
+  color: inherit;
+}
+
+.home-titles-heading--prev {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: rgba(255,255,255,0.75);
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   Homepage — Generic section layout
+   ============================================================ */
+
+.home-section {
+  padding: 4rem 0;
+}
+
+.home-section:nth-child(even) {
+  background: #f5f5f5;
+}
+
+.home-section--videos,
+.home-section--photos {
+  background: var(--color-dark-alt);
+}
+
+.home-section--videos .home-section-heading,
+.home-section--photos .home-section-heading {
+  color: #fff;
+}
+
+.home-section-heading {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.home-section-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ============================================================
+   Feed Grid (feed-grid.njk)
+   ============================================================ */
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 860px) {
+  .feed-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .feed-grid { grid-template-columns: 1fr; }
+}
+
+.feed-card {
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.feed-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.feed-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.feed-card-thumb {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+
+.feed-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.feed-card:hover .feed-card-thumb img {
+  transform: scale(1.04);
+}
+
+/* Play button overlay for video cards */
+.feed-card--video .feed-card-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  transition: background var(--transition);
+}
+
+.feed-card--video:hover .feed-card-play {
+  background: rgba(0,0,0,0.15);
+}
+
+.feed-card-play svg {
+  width: 52px;
+  height: 52px;
+  fill: #fff;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  transition: transform var(--transition);
+}
+
+.feed-card--video:hover .feed-card-play svg {
+  transform: scale(1.12);
+}
+
+.feed-card-caption {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #1a1a1a;
+}
+
+/* ============================================================
+   Homepage — Bike Check
+   ============================================================ */
+
+.home-section--bikecheck { background: #fff; }
+
+.bikecheck-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .bikecheck-grid { grid-template-columns: 1fr; }
+}
+
+.bikecheck-img a { display: block; }
+.bikecheck-img img {
+  width: 100%;
+  border-radius: 2px;
+  transition: opacity var(--transition);
+}
+.bikecheck-img a:hover img { opacity: 0.9; }
+
+.bikecheck-caption {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.bikecheck-caption a {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+.bikecheck-caption a:hover { color: var(--color-primary); }
+
+/* ============================================================
+   Homepage — Sponsors
+   ============================================================ */
+
+.home-section--sponsors { background: #f0f0f0; }
+
+.sponsors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.sponsor-logo {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.sponsor-logo:hover {
+  opacity: 0.8;
+  transform: scale(1.04);
+}
+
+.sponsor-logo img {
+  max-height: 80px;
+  width: auto;
+}
+
+.sponsors-contact {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.sponsors-contact a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sponsors-contact a:hover { color: var(--color-primary-alt); }
+
+/* ============================================================
+   Homepage — CTA band
+   ============================================================ */
+
+.home-cta {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.home-cta-heading {
+  color: #fff;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  margin-bottom: 1rem;
+  letter-spacing: 0.06em;
+}
+
+.home-cta-quote {
+  color: rgba(255,255,255,0.7);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.home-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Buttons (shared)
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  background: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+}
+
+.btn:hover {
+  background: var(--color-primary-alt);
+  border-color: var(--color-primary-alt);
+  color: #fff;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.6);
+}
+
+.btn--outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+  color: #fff;
+}

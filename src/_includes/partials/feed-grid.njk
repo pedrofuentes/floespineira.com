@@ -1,0 +1,29 @@
+{%- if items and items.length > 0 -%}
+<div class="feed-grid">
+  {%- for item in items -%}
+  <article class="feed-card{% if kind == 'video' %} feed-card--video{% endif %}">
+    <a href="{{ item.url }}" target="_blank" rel="noopener" class="feed-card-link">
+      <div class="feed-card-thumb">
+        <img
+          src="{{ item.thumbnail }}"
+          alt="{{ item.title or item.caption or '' }}"
+          loading="lazy"
+          width="320"
+          height="180"
+        />
+        {%- if kind == 'video' -%}
+        <span class="feed-card-play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+        </span>
+        {%- endif -%}
+      </div>
+      {%- if item.title or item.caption -%}
+      <p class="feed-card-caption">{{ (item.title or item.caption) | truncate(80) }}</p>
+      {%- endif -%}
+    </a>
+  </article>
+  {%- endfor -%}
+</div>
+{%- endif -%}

@@ -1,6 +1,184 @@
 ---
 layout: base.njk
 title: Flo Espiñeira
+description: "Pro Enduro Rider, NB Queer Community, From The Andes to the World. 2023 Women's E-EDR World Champion and 2022 EWS-e World Champion."
+hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
 ---
 
-<h1>It builds</h1>
+{# ============================================================ #}
+{# HERO                                                          #}
+{# ============================================================ #}
+<section
+  class="home-hero"
+  style="background-image: url('/assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg');"
+  aria-label="Hero"
+>
+  <div class="container">
+    <div class="home-hero-inner">
+      <h1 class="home-hero-name">Flo Espiñeira <span class="home-hero-pronouns">(She/They)</span></h1>
+      <p class="home-hero-tagline">{{ site.home.heroHeadline }}</p>
+      <div class="home-hero-socials">
+        <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="28" height="28">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="{{ site.socials.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="28" height="28">
+            <path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+          </svg>
+        </a>
+        <a href="{{ site.socials.tiktok }}" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="28" height="28">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.21 8.21 0 004.8 1.54V6.84a4.85 4.85 0 01-1.03-.15z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================ #}
+{# CHAMPION SUB-HERO (dark band with trophy photo + titles)      #}
+{# ============================================================ #}
+<section class="home-titles" aria-label="Achievements">
+  <div class="container">
+    <div class="home-titles-inner">
+      <div class="home-titles-photo">
+        <img
+          src="/assets/images/Flo2023-800x800.jpg"
+          alt="Flo Espineira holding the 2023 Women's E-EDR World Champion trophy"
+          loading="lazy"
+          width="480"
+          height="480"
+        />
+      </div>
+      <div class="home-titles-text">
+        <h2 class="home-titles-heading">
+          <a href="https://galfer.eu/bike/florencia-espineira-world-champion-e-edr-2023/" target="_blank" rel="noopener">
+            Flo is the 2023 Women&#8217;s E-EDR World Champion
+          </a>
+        </h2>
+        <p>Flo has achieved the first-ever title in the history of the UCI Women&#8217;s Enduro World Cup and retains the title as world champion of women&#8217;s electric Enduro.</p>
+        <h2 class="home-titles-heading home-titles-heading--prev">
+          Previously:
+          <a href="https://www.enduroworldseries.com/news/1949-espineira-and-pontal-crowned-2022-ewse-champions/" target="_blank" rel="noopener">
+            Flo is the 2022 EWS-e World Champion
+          </a>
+        </h2>
+        <p>Check the <a href="https://www.enduroworldseries.com/rankings/riders/" target="_blank" rel="noopener">EWS-E World Ranking</a> and <a href="https://stories.orbea.com/en/enduro-world-series-flo-espineira/" target="_blank" rel="noopener">Orbea&#8217;s Article</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ============================================================ #}
+{# LATEST VIDEOS                                                 #}
+{# ============================================================ #}
+{% if youtube and youtube.length > 0 %}
+<section class="home-section home-section--videos" aria-label="{{ site.home.sections.videos }}">
+  <div class="container">
+    <h2 class="home-section-heading">{{ site.home.sections.videos }}</h2>
+    {% set items = youtube %}
+    {% set kind = "video" %}
+    {% include "partials/feed-grid.njk" %}
+    <p class="home-section-more">
+      <a href="{{ site.socials.youtube }}" target="_blank" rel="noopener" class="btn">View all on YouTube ›</a>
+    </p>
+  </div>
+</section>
+{% endif %}
+
+{# ============================================================ #}
+{# LATEST PHOTOS                                                 #}
+{# ============================================================ #}
+{% if instagram and instagram.length > 0 %}
+<section class="home-section home-section--photos" aria-label="{{ site.home.sections.photos }}">
+  <div class="container">
+    <h2 class="home-section-heading">{{ site.home.sections.photos }}</h2>
+    {% set items = instagram %}
+    {% set kind = "photo" %}
+    {% include "partials/feed-grid.njk" %}
+    <p class="home-section-more">
+      <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener" class="btn">View all on Instagram ›</a>
+    </p>
+  </div>
+</section>
+{% endif %}
+
+{# ============================================================ #}
+{# BIKE CHECK                                                    #}
+{# ============================================================ #}
+<section class="home-section home-section--bikecheck" aria-label="{{ site.home.sections.bikeCheck }}">
+  <div class="container">
+    <h2 class="home-section-heading">{{ site.home.sections.bikeCheck }}</h2>
+    <div class="bikecheck-grid">
+      <div class="bikecheck-img">
+        <a href="https://www.orbea.com/us-en/ebikes/mountain/wild/" target="_blank" rel="noopener">
+          <img
+            src="/assets/images/unnamed-1024x1024.jpg"
+            alt="Orbea Wild"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+        </a>
+      </div>
+      <div class="bikecheck-img">
+        <a href="https://www.orbea.com/us-en/ebikes/mountain/wild/" target="_blank" rel="noopener">
+          <img
+            src="/assets/images/unnamed-1-1024x1024.jpg"
+            alt="Flo Orbea Wild"
+            loading="lazy"
+            width="600"
+            height="600"
+          />
+        </a>
+      </div>
+    </div>
+    <p class="bikecheck-caption">
+      <a href="https://www.orbea.com/us-en/ebikes/mountain/wild/" target="_blank" rel="noopener">
+        Orbea Wild 2022 &mdash; 29&#8243; size S
+      </a>
+    </p>
+  </div>
+</section>
+
+{# ============================================================ #}
+{# SPONSORS                                                      #}
+{# ============================================================ #}
+<section class="home-section home-section--sponsors" aria-label="{{ site.home.sections.sponsors }}">
+  <div class="container">
+    <h2 class="home-section-heading">{{ site.home.sections.sponsors }}</h2>
+    <div class="sponsors-grid">
+      <a href="https://www.orbea.com/" title="Orbea Bikes" target="_blank" rel="noopener" class="sponsor-logo">
+        <img
+          src="/assets/images/orbea_t-300x114.png"
+          alt="Orbea"
+          loading="lazy"
+          width="300"
+          height="114"
+        />
+      </a>
+    </div>
+    <p class="sponsors-contact">
+      Interested in sponsoring? <a href="/contact/">Contact me ›</a>
+    </p>
+  </div>
+</section>
+
+{# ============================================================ #}
+{# CTA                                                           #}
+{# ============================================================ #}
+<section class="home-cta" aria-label="{{ site.home.sections.cta }}">
+  <div class="container">
+    <h2 class="home-cta-heading">{{ site.home.sections.cta }}</h2>
+    <p class="home-cta-quote">
+      <em>&#8220;If you really want something, never stop believing, never stop fighting, never stop knocking on every door&#8221;</em> &mdash; Flo
+    </p>
+    <div class="home-cta-actions">
+      <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener" class="btn btn--primary">Follow on Instagram</a>
+      <a href="/news/" class="btn btn--outline">Latest News</a>
+    </div>
+  </div>
+</section>
