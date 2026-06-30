@@ -3,7 +3,7 @@ layout: post.njk
 title: "Geoff Gulevich Chases PBA Winner Flo Espiñeira Down Jaws"
 date: 2022-01-06T14:36:37
 slug: geoff-gulevich-chases-pba-winner-flo-espin%cc%83eira-down-jaws
-permalink: /geoff-gulevich-chases-pba-winner-flo-espin%cc%83eira-down-jaws/
+permalink: /geoff-gulevich-chases-pba-winner-flo-espiñeira-down-jaws/
 hero: ""
 excerpt: "[embedyt]https://www.youtube.com/watch?v=fzDFWk0w4Lg[/embedyt] &#8220;Insanely consistent riding was what I noticed from Flo, during the Pinkbike Academy. Soft-spoken who clearly speaks volumes, through her effortless style and strength on the bike. With the Read More"
 ---
