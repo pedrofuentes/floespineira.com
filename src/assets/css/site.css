@@ -554,6 +554,14 @@ button[type="submit"]:hover, button[type="submit"]:focus {
   border: 0;
 }
 
+/* Keep the News index compact: cap embeds there (full size stays on the post page) */
+.news-page .video-embed {
+  max-width: 480px;
+  padding-bottom: 0;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 /* ============================================================
    Utility
    ============================================================ */
@@ -624,16 +632,16 @@ body.is-home #masthead {
 }
 
 .home-hero-name {
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
   color: #fff;
   margin-bottom: 0.3em;
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .home-hero-pronouns {
-  font-size: 0.45em;
+  font-size: 0.5em;
   font-family: var(--font-body);
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 0;
   vertical-align: middle;
   opacity: 0.9;
@@ -756,6 +764,9 @@ body.is-home #masthead {
   background: var(--color-dark-alt);
 }
 
+.home-section--photos .feed-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 860px) { .home-section--photos .feed-grid { grid-template-columns: repeat(2, 1fr); } }
+
 .home-section--videos .home-section-heading,
 .home-section--photos .home-section-heading {
   color: #fff;
@@ -764,8 +775,6 @@ body.is-home #masthead {
 .home-section-heading {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   margin-bottom: 2rem;
-  border-bottom: 3px solid var(--color-primary);
-  padding-bottom: 0.5rem;
   display: inline-block;
 }
 
@@ -844,8 +853,8 @@ body.is-home #masthead {
 }
 
 .feed-card-play svg {
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   fill: #fff;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
   transition: transform var(--transition);
@@ -1062,8 +1071,9 @@ body.is-home #masthead {
    ============================================================ */
 
 .home-section-subheading {
-  color: rgba(255,255,255,0.7);
-  font-size: 1rem;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: clamp(1.4rem, 3vw, 2rem);
   margin-top: -1rem;
   margin-bottom: 2rem;
 }
