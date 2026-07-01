@@ -36,7 +36,7 @@
     </script>
     {% endif %}
   </head>
-  <body>
+  <body class="{% if page.url == '/' %}is-home{% endif %}">
     {% include "partials/header.njk" %}
     <main id="content" tabindex="-1">
       {{ content | safe }}

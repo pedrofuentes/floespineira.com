@@ -52,16 +52,18 @@
 /* ---------- Custom properties ---------- */
 
 :root {
-  --color-primary:    #0f9e5e;
-  --color-primary-alt:#00d084;
-  --color-dark:       #313131;
-  --color-dark-alt:   #32373c;
+  /* Original floespineira.com (BoldGrid/Crio) is monochrome: near-black + white, NO green */
+  --color-primary:    #ffffff;
+  --color-primary-alt:#ffffff;
+  --color-dark:       #121012;   /* near-black: body + all section backgrounds */
+  --color-dark-alt:   #121012;
   --color-light:      #ffffff;
+  --color-btn-text:   #333333;   /* dark text on white buttons */
   --font-heading:     'Yanone Kaffeesatz', 'Arial Narrow', Arial, sans-serif;
   --font-body:        'Fira Mono', 'Courier New', monospace;
   --container-max:    1200px;
-  --header-bg:        var(--color-dark-alt);
-  --footer-bg:        var(--color-dark);
+  --header-bg:        #121012;
+  --footer-bg:        #121012;
   --transition:       0.2s ease;
 }
 
@@ -79,8 +81,8 @@ body {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.7;
-  color: var(--color-dark);
-  background: var(--color-light);
+  color: var(--color-light);
+  background: var(--color-dark);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -92,27 +94,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  line-height: 1.2;
+  letter-spacing: 0;
+  line-height: 1.1;
   margin: 0 0 0.75em;
-  color: var(--color-dark);
+  color: var(--color-light);
 }
 
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.8rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1.1rem; }
+h1 { font-size: 52px; }
+h2 { font-size: 43px; }
+h3 { font-size: 34px; }
+h4 { font-size: 25px; }
+h5 { font-size: 20px; }
+h6 { font-size: 17px; }
 
 p { margin: 0 0 1.2em; }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-light);
   text-decoration: none;
   transition: color var(--transition);
 }
-a:hover, a:focus { color: var(--color-primary-alt); text-decoration: underline; }
+a:hover, a:focus { color: var(--color-light); text-decoration: underline; }
+
+/* Inline content links are underlined in the original */
+main a:not(.btn):not(.feed-card-link):not(.collage-link) { text-decoration: underline; }
 
 /* ---------- Layout / Container ---------- */
 
@@ -155,9 +160,9 @@ main {
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  border: 2px solid var(--color-primary);
-  background: var(--color-primary);
-  color: var(--color-light);
+  border: 2px solid var(--color-light);
+  background: var(--color-light);
+  color: var(--color-btn-text);
   cursor: pointer;
   transition: background var(--transition), color var(--transition), border-color var(--transition);
   text-decoration: none;
@@ -167,7 +172,7 @@ main {
 .btn:hover, .btn:focus,
 button[type="submit"]:hover, button[type="submit"]:focus {
   background: transparent;
-  color: var(--color-primary);
+  color: var(--color-light);
   text-decoration: none;
 }
 
@@ -187,7 +192,7 @@ button[type="submit"]:hover, button[type="submit"]:focus {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  box-shadow: none;
 }
 
 .header-inner {
@@ -208,7 +213,7 @@ button[type="submit"]:hover, button[type="submit"]:focus {
 
 .site-title {
   font-family: var(--font-heading);
-  font-size: 1.9rem;
+  font-size: 0;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -305,7 +310,7 @@ button[type="submit"]:hover, button[type="submit"]:focus {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .hamburger-label { display: flex; }
 
   #primary-nav {
