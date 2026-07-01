@@ -24,7 +24,7 @@
       <p class="feed-card-caption">{{ (item.title or item.caption) | truncate(80) }}</p>
       {%- endif -%}
       {%- if kind == 'video' and item.published -%}
-      <p class="feed-card-date">{{ item.published }}</p>
+      <p class="feed-card-date">{{ item.published | readableDate }}</p>
       {%- endif -%}
     </a>
   </article>
