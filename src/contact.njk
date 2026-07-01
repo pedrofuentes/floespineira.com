@@ -7,56 +7,85 @@ permalink: /contact/
 
 <div class="container contact-page">
   <h1>Contact</h1>
-  <p class="contact-intro">
-    Hi, I am Flo Espiñeira. For media inquiries, sponsorship or any other topic
-    please use the form to contact me, I&rsquo;ll get back to you as soon as I can.
-  </p>
 
-  <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
-    <input type="hidden" name="subject" value="New message from floespineira.com" />
-    <input type="hidden" name="from_name" value="floespineira.com" />
-    <!-- Honeypot spam filter -->
-    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
-
-    <div class="form-row">
-      <label for="name">Name <span aria-hidden="true">*</span></label>
-      <input type="text" id="name" name="name" required autocomplete="name" />
-    </div>
-    <div class="form-row">
-      <label for="email">Email <span aria-hidden="true">*</span></label>
-      <input type="email" id="email" name="email" required autocomplete="email" spellcheck="false" />
-    </div>
-    <div class="form-row">
-      <label for="message">Comment or Message <span aria-hidden="true">*</span></label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+  <div class="contact-grid">
+    <div class="contact-left">
+      <img
+        src="/assets/images/Episode-10-36-1024x683.jpg"
+        srcset="/assets/images/Episode-10-36-300x200.jpg 300w,
+                /assets/images/Episode-10-36-768x512.jpg 768w,
+                /assets/images/Episode-10-36-1024x683.jpg 1024w"
+        sizes="(max-width: 640px) 100vw, 50vw"
+        alt="Flo Espiñeira"
+        class="contact-portrait"
+      />
+      <p class="contact-name">Hi, I am Flo Espi&#xF1;eira.</p>
+      <p class="contact-bio">For media inquiries, sponsorship or any other topic please use the form to contact me, I&rsquo;ll get back to you as soon as I can.</p>
     </div>
 
-    <button type="submit" class="btn contact-submit">Submit</button>
-    <p id="form-result" class="form-result" role="status" aria-live="polite" hidden></p>
-  </form>
+    <div class="contact-right">
+      <h3 class="contact-heading">Get in Touch</h3>
+
+      <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="{{ site.web3formsKey }}" />
+        <input type="hidden" name="subject" value="New message from floespineira.com" />
+        <input type="hidden" name="from_name" value="floespineira.com" />
+        <!-- Honeypot spam filter -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="form-row">
+          <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" spellcheck="false" />
+        </div>
+        <div class="form-row">
+          <label for="message">Comment or Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="btn contact-submit">Submit</button>
+        <p id="form-result" class="form-result" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </div>
 </div>
 
 <style>
-  .contact-page { max-width: 680px; padding-top: 2.5rem; padding-bottom: 3.5rem; }
-  .contact-intro { margin-bottom: 2rem; }
+  .contact-page { padding-top: 2.5rem; padding-bottom: 3.5rem; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 700px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  .contact-portrait { width: 100%; display: block; margin-bottom: 1.2rem; }
+  .contact-name { font-size: 1rem; margin: 0 0 0.6rem; }
+  .contact-bio { font-size: 0.9rem; line-height: 1.65; margin: 0; }
+  .contact-heading { margin: 0 0 1.5rem; }
   .contact-form .form-row { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
-  .contact-form label { margin-bottom: 0.4rem; font-weight: 600; }
+  .contact-form label { margin-bottom: 0.4rem; font-size: 0.9rem; }
+  .req { color: #e02020; }
   .contact-form input,
   .contact-form textarea {
     width: 100%;
     padding: 0.7rem 0.85rem;
-    border: 2px solid var(--color-dark, #313131);
-    background: #fff;
-    font-family: inherit;
-    font-size: 1rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #ffffff;
+    color: #121012;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
   }
   .contact-form input:focus,
-  .contact-form textarea:focus { outline: 3px solid var(--color-primary, #0f9e5e); outline-offset: 1px; }
-  .contact-form span { color: var(--color-primary, #0f9e5e); }
+  .contact-form textarea:focus { outline: 2px solid #ffffff; outline-offset: 1px; }
   .form-result { margin-top: 1rem; font-weight: 600; }
-  .form-result.is-error { color: #c0392b; }
-  .form-result.is-success { color: var(--color-primary, #0f9e5e); }
+  .form-result.is-error { color: #e02020; }
+  .form-result.is-success { color: #ffffff; }
 </style>
 
 <script>

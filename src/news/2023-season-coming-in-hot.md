@@ -5,7 +5,7 @@ date: 2023-02-07T03:47:36
 slug: 2023-season-coming-in-hot
 permalink: /2023-season-coming-in-hot/
 hero: ""
-excerpt: "&#8220;It&#8217;s been a long winter, but there&#8217;s no excuse for not training hard. &#8220; 2022-2023 winter training&nbsp; This is my first time spending a winter in Canada. When living in Read More"
+excerpt: "It's been a long winter, but no excuse for not training hard. First winter in Canada — Flo hits the gym every day and comes back stronger than ever."
 ---
 ![](/assets/images/IMG_5512-300x200.jpg)![](/assets/images/IMG_5496-300x200.jpg)
 

@@ -5,7 +5,7 @@ date: 2022-01-06T15:05:53
 slug: press-release-flo-espineira-joins-orbea
 permalink: /press-release-flo-espineira-joins-orbea/
 hero: ""
-excerpt: "&nbsp; Flo is no stranger to racing, She&#8217;s posted top 10 EWS Finishes, won the Chilean Championship 4 years in a row and is the fastest woman in Latin America Read More"
+excerpt: "Flo joins Orbea! With top 10 EWS finishes and 4 Chilean Championship titles, she is one of the most exciting enduro racers in the world."
 ---
 ![](/assets/images/FLO-ESPINEIRA-23-300x200.jpg)
 

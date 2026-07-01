@@ -5,9 +5,9 @@ date: 2022-01-06T14:36:37
 slug: geoff-gulevich-chases-pba-winner-flo-espin%cc%83eira-down-jaws
 permalink: /geoff-gulevich-chases-pba-winner-flo-espiñeira-down-jaws/
 hero: ""
-excerpt: "[embedyt]https://www.youtube.com/watch?v=fzDFWk0w4Lg[/embedyt] &#8220;Insanely consistent riding was what I noticed from Flo, during the Pinkbike Academy. Soft-spoken who clearly speaks volumes, through her effortless style and strength on the bike. With the Read More"
+excerpt: "Geoff Gulevich follows PBA winner Flo down Jaws, one of Whistler's gnarliest trails, in this special post-season video."
 ---
-\[embedyt\]https://www.youtube.com/watch?v=fzDFWk0w4Lg\[/embedyt\]
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/fzDFWk0w4Lg" title="Geoff Gulevich Chases Flo Espiñeira Down Jaws" allowfullscreen loading="lazy"></iframe></div>
 
 _“Insanely consistent riding was what I noticed from Flo, during the Pinkbike Academy. Soft-spoken who clearly speaks volumes, through her effortless style and strength on the bike. With the best overall results, professional demeanor, and lack thereof an ego, lead to a unanimous decision, making Flo our winner._
 
