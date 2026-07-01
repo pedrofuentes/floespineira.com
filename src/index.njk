@@ -16,7 +16,6 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
   <div class="container">
     <div class="home-hero-inner">
       <h1 class="home-hero-name">Flo Espiñeira <span class="home-hero-pronouns">(She/They)</span></h1>
-      <p class="home-hero-tagline">{{ site.home.heroHeadline }}</p>
       <div class="home-hero-socials">
         <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="28" height="28">
@@ -39,6 +38,18 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
 </section>
 
 {# ============================================================ #}
+{# IDENTITY / TAGLINE + QUOTE                                    #}
+{# ============================================================ #}
+<section class="home-identity" aria-label="Identity">
+  <div class="container">
+    <h2 class="home-identity-heading">Non-Binary Queer Pro Enduro Rider</h2>
+    <p class="home-identity-quote">
+      <em>&#8220;Never stop believing in yourself because the true energy that moves everything around you comes from within yourself&#8221;</em> &#8211; Flo
+    </p>
+  </div>
+</section>
+
+{# ============================================================ #}
 {# CHAMPION SUB-HERO (dark band with trophy photo + titles)      #}
 {# ============================================================ #}
 <section class="home-titles" aria-label="Achievements">
@@ -49,8 +60,8 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
           src="/assets/images/Flo2023-800x800.jpg"
           alt="Flo Espineira holding the 2023 Women's E-EDR World Champion trophy"
           loading="lazy"
-          width="480"
-          height="480"
+          width="600"
+          height="600"
         />
       </div>
       <div class="home-titles-text">
@@ -60,12 +71,12 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
           </a>
         </h2>
         <p>Flo has achieved the first-ever title in the history of the UCI Women&#8217;s Enduro World Cup and retains the title as world champion of women&#8217;s electric Enduro.</p>
-        <h2 class="home-titles-heading home-titles-heading--prev">
+        <h3 class="home-titles-heading home-titles-heading--prev">
           Previously:
           <a href="https://www.enduroworldseries.com/news/1949-espineira-and-pontal-crowned-2022-ewse-champions/" target="_blank" rel="noopener">
             Flo is the 2022 EWS-e World Champion
           </a>
-        </h2>
+        </h3>
         <p>Check the <a href="https://www.enduroworldseries.com/rankings/riders/" target="_blank" rel="noopener">EWS-E World Ranking</a> and <a href="https://stories.orbea.com/en/enduro-world-series-flo-espineira/" target="_blank" rel="noopener">Orbea&#8217;s Article</a></p>
       </div>
     </div>
@@ -81,9 +92,11 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
     <h2 class="home-section-heading">{{ site.home.sections.videos }}</h2>
     {% set items = youtube %}
     {% set kind = "video" %}
+    {% set feedLimit = 3 %}
     {% include "partials/feed-grid.njk" %}
+    {% set feedLimit = 0 %}
     <p class="home-section-more">
-      <a href="{{ site.socials.youtube }}" target="_blank" rel="noopener" class="btn">View all on YouTube ›</a>
+      <a href="{{ site.socials.youtube }}" target="_blank" rel="noopener" class="btn">Subscribe ›</a>
     </p>
   </div>
 </section>
@@ -96,11 +109,13 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
 <section class="home-section home-section--photos" aria-label="{{ site.home.sections.photos }}">
   <div class="container">
     <h2 class="home-section-heading">{{ site.home.sections.photos }}</h2>
+    <p class="home-section-subheading">We are on Instagram</p>
     {% set items = instagram %}
     {% set kind = "photo" %}
+    {% set feedLimit = 0 %}
     {% include "partials/feed-grid.njk" %}
     <p class="home-section-more">
-      <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener" class="btn">View all on Instagram ›</a>
+      <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener" class="btn">Follow on Instagram ›</a>
     </p>
   </div>
 </section>
@@ -138,7 +153,7 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
     </div>
     <p class="bikecheck-caption">
       <a href="https://www.orbea.com/us-en/ebikes/mountain/wild/" target="_blank" rel="noopener">
-        Orbea Wild 2022 &mdash; 29&#8243; size S
+        Orbea Wild 2022 29&#8243; size S
       </a>
     </p>
   </div>
@@ -162,8 +177,34 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
       </a>
     </div>
     <p class="sponsors-contact">
-      Interested in sponsoring? <a href="/contact/">Contact me ›</a>
+      <a href="/contact/">contact me</a>
     </p>
+  </div>
+</section>
+
+{# ============================================================ #}
+{# PHOTO COLLAGE                                                 #}
+{# ============================================================ #}
+<section class="home-collage" aria-label="Photo collage">
+  <div class="collage-grid">
+    <div class="collage-col">
+      <img src="/assets/images/565_0_511.66601435095_1024_2022EWS_FinaleLigure_byKikeAbelleira-06111.jpg" alt="EWS Finale Ligure 2022" loading="lazy">
+      <img src="/assets/images/385_0_1024_1024_2022EWS_FinaleLigure_byKikeAbelleira-06156.jpg" alt="EWS Finale Ligure 2022" loading="lazy">
+    </div>
+    <div class="collage-col">
+      <img src="/assets/images/116_0_300_300_2022EWS_FinaleLigure_byKikeAbelleira-05700-768x512.jpg" alt="EWS Finale Ligure 2022" loading="lazy">
+      <img src="/assets/images/281_0_1024_1024_2022EWS_Canazei_byKikeAbelleira-03683.jpg" alt="EWS Canazei 2022" loading="lazy">
+      <img src="/assets/images/dad-old-300x300.jpg" alt="Flo and her dad Hernán" loading="lazy">
+    </div>
+    <div class="collage-col">
+      <img src="/assets/images/142_0_300_300_2022_EWS_Whistler_byKikeAbelleira-01624-768x512.jpg" alt="EWS Whistler 2022" loading="lazy">
+      <img src="/assets/images/531_0_512.33398564905_1024_2022EWS_Loudenvielle_byKikeAbelleira-04568.jpg" alt="EWS Loudenvielle 2022" loading="lazy">
+    </div>
+    <div class="collage-col">
+      <img src="/assets/images/84_0_300_300_2022EWS_Loudenvielle_byKikeAbelleira-08099-768x512.jpg" alt="EWS Loudenvielle 2022" loading="lazy">
+      <img src="/assets/images/49_0_300_300_2022_EWS_Whistler_byKikeAbelleira-06869-768x512.jpg" alt="EWS Whistler 2022" loading="lazy">
+      <img src="/assets/images/162_0_300_300_2022EWS_TweedValley_byKikeAbelleira-2-18-768x512.jpg" alt="EWS Tweed Valley 2022" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -174,11 +215,7 @@ hero: /assets/images/2022_EWS_Whistler_byKikeAbelleira-09210.jpg
   <div class="container">
     <h2 class="home-cta-heading">{{ site.home.sections.cta }}</h2>
     <p class="home-cta-quote">
-      <em>&#8220;If you really want something, never stop believing, never stop fighting, never stop knocking on every door&#8221;</em> &mdash; Flo
+      <em>&#8220;If you really want something, never stop believing, never stop fighting, never stop knocking on every door&#8221;</em> &#8211; Flo
     </p>
-    <div class="home-cta-actions">
-      <a href="{{ site.socials.instagram }}" target="_blank" rel="noopener" class="btn btn--primary">Follow on Instagram</a>
-      <a href="/news/" class="btn btn--outline">Latest News</a>
-    </div>
   </div>
 </section>

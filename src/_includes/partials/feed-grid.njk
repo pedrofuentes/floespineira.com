@@ -1,6 +1,7 @@
 {%- if items and items.length > 0 -%}
 <div class="feed-grid">
   {%- for item in items -%}
+  {%- if not feedLimit or loop.index <= feedLimit -%}
   <article class="feed-card{% if kind == 'video' %} feed-card--video{% endif %}">
     <a href="{{ item.url }}" target="_blank" rel="noopener" class="feed-card-link">
       <div class="feed-card-thumb">
@@ -22,8 +23,12 @@
       {%- if item.title or item.caption -%}
       <p class="feed-card-caption">{{ (item.title or item.caption) | truncate(80) }}</p>
       {%- endif -%}
+      {%- if kind == 'video' and item.published -%}
+      <p class="feed-card-date">{{ item.published }}</p>
+      {%- endif -%}
     </a>
   </article>
+  {%- endif -%}
   {%- endfor -%}
 </div>
 {%- endif -%}
