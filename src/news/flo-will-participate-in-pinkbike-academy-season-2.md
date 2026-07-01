@@ -5,9 +5,9 @@ date: 2021-10-14T05:11:33
 slug: flo-will-participate-in-pinkbike-academy-season-2
 permalink: /flo-will-participate-in-pinkbike-academy-season-2/
 hero: ""
-excerpt: "[embedyt]https://www.youtube.com/watch?v=bcEMt7fhv-s[/embedyt] &nbsp; Flo will participate in Pinkbike Academy Season 2 with 10 aspiring professional mountain bikers from all over the world to compete through 10 weeks of challenges for $30,000 Read More"
+excerpt: "Flo joins 10 aspiring mountain bikers from around the world in Pinkbike Academy Season 2, competing for $30,000 and a pro contract with Orbea."
 ---
-\[embedyt\]https://www.youtube.com/watch?v=bcEMt7fhv-s\[/embedyt\]
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/bcEMt7fhv-s" title="Flo will participate in Pinkbike Academy Season 2" allowfullscreen loading="lazy"></iframe></div>
 
 Flo will participate in [Pinkbike Academy Season 2](https://stories.orbea.com/en/enduro-pink-bike/) with 10 aspiring professional mountain bikers from all over the world to compete through 10 weeks of challenges for $30,000 and a pro contract with [Orbea Bikes](https://www.orbea.com/).
 
